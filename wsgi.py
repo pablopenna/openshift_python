@@ -1,9 +1,13 @@
 from flask import Flask
-application = Flask(__name__)
+app = Flask(__name__)
 
-@application.route("/")
+@app.route("/")
 def hello():
-    return "Hello World!"
+    return "Welcome to the main page!"
+
+@app.route("/<nombre>")
+def greet(nombre):
+	return "Hello there, "+nombre
 
 if __name__ == "__main__":
     application.run()
