@@ -17,6 +17,7 @@ if __name__ == "__main__":
 from flask import Flask, session, redirect, url_for, escape, request
 
 application = Flask(__name__)
+application.config['SECRET_KEY'] = 'ITSASECRET'
 
 @application.route('/')
 def index():
@@ -55,7 +56,7 @@ def logout():
 
 
 if __name__ == '__main__':
-	application.config["SECRET_KEY"] = "ITSASECRET"
+	#application.config["SECRET_KEY"] = "ITSASECRET"
 	#application.run(port=5000,debug=True)
 	#application.run(threaded=True)
 	application.run()
