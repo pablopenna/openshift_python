@@ -16,9 +16,9 @@ if __name__ == "__main__":
 """
 from flask import Flask, session, redirect, url_for, escape, request
 
-app = Flask(__name__)
+application = Flask(__name__)
 
-@app.route('/')
+@application.route('/')
 def index():
 	if 'username' in session:
 		username = session['username']
@@ -28,7 +28,7 @@ def index():
 	"click here to log in</b></a>"
 
 
-@app.route('/login', methods = ['GET', 'POST'])
+@application.route('/login', methods = ['GET', 'POST'])
 def login():
 	if request.method == 'POST':
 		session['username'] = request.form['username']
@@ -41,7 +41,7 @@ def login():
 	</form>
 
 	'''
-@app.route('/logout')
+@application.route('/logout')
 def logout():
 # remove the username from the session if it is there
 	session.pop('username', None)
@@ -50,8 +50,8 @@ def logout():
 
 
 if __name__ == '__main__':
-	app.config["SECRET_KEY"] = "ITSASECRET"
-	#app.run(port=5000,debug=True)
-	#app.run(threaded=True)
-	app.run()
+	application.config["SECRET_KEY"] = "ITSASECRET"
+	#application.run(port=5000,debug=True)
+	#application.run(threaded=True)
+	application.run()
 	
