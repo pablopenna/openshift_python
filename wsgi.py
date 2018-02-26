@@ -39,7 +39,7 @@ def login():
 		print "test_login"
 		return '''
 
-		<form action = "{{ url_for('login') }}" method = "POST">
+		<form action = "/login" method = "POST">
 		<p><input type = "text" name = "username"/></p>
 		<p><input type = "submit" value = "Login"/></p>
 		</form>
