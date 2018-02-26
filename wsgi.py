@@ -52,4 +52,4 @@ def logout():
 if __name__ == '__main__':
     app.config["SECRET_KEY"] = "ITSASECRET"
     #app.run(port=5000,debug=True)
-    app.run(host='0.0.0.0',port=5000,debug=True,threaded=True)
+    app.run(threaded=True)
